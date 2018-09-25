@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{3C73397A-1800-4B3B-9472-A7CB3B938A92}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  
+    
+    <Projects>
+      <Projects Name="CheckSim.exe">CheckSim.bdsproj</Projects>
+      <Projects Name="CheckSimNaoSeAplica.exe">CheckSimNaoSeAplica.bdsproj</Projects>
+      <Projects Name="Targets">CheckSim.exe CheckSimNaoSeAplica.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+	<StarTeamAssociation></StarTeamAssociation>
+	<StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
+</BorlandProject>
