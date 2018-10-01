@@ -17,10 +17,12 @@ type
          const
             QT_ITENS = 21;
             JUSTIFICATIVA = 'Nao se aplica';
+            PROJECT = 'SiagriProject';
          var
             FHandle: HWnd;
             FOpc: string;
          function  TrazerProjectParaFrente: boolean;
+         function  EvnviarProjectParaTras: boolean;         
          procedure ExecutaComando(pCmd: TComando);
          procedure SelecionaNaoSeAplica;
          procedure EscreveJustificativa;
@@ -55,6 +57,14 @@ begin
 //      lCodigo := Ord(lChar);
 //      keybd_event(lCodigo, 0, 0, 0);
 //   end;
+end;
+
+function TExec.EvnviarProjectParaTras: boolean;
+begin
+   if FHandle <> 0 then
+   begin
+      SetWindowPos(FHandle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE or SWP_NOSIZE);
+   end;
 end;
 
 procedure TExec.ExecutaComando(pCmd: TComando);
@@ -92,6 +102,7 @@ begin
          ExecutaComando(TCSetaBaixo);
          ExecutaComando(TCEnter);
       end;
+      EvnviarProjectParaTras;
    end;
 end;
 
@@ -114,7 +125,7 @@ end;
 
 function TExec.TrazerProjectParaFrente: boolean;
 begin
-   FHandle := FindWindow(nil, 'SiagriProject');
+   FHandle := FindWindow(nil, PROJECT);
    Result := FHandle <> 0;
    if Result then
    begin
